@@ -1,0 +1,23 @@
+<form class="overlayout" fxLayout="column" fxLayoutGap="3%" fxLayoutAlign="center center" (ngSubmit)="this.loginForm.valid && login()" [formGroup]="this.loginForm">
+
+
+    <img src="../assets/digiresume-green.png" alt="digital-resume" style="width: 20%;height: 20%;">
+
+    <mat-card fxLayout="column" fxLayoutGap="4%">
+        <h2>Login</h2>
+        <mat-form-field>
+            <input matInput formControlName="email" placeholder="Email" type="email">
+            <mat-error>Email is not valid</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput formControlName="password" placeholder="Password" type="password">
+            <mat-error>(4-10 digit)Password is not valid</mat-error>
+        </mat-form-field>
+        <a href="/forgot-password" style="width: 32%">Forgot Password?</a>
+        <div fxLayoutGap="row" fxLayoutAlign="end" fxLayoutGap="5%" style="margin-top: 7%;">
+            <button type="submit" mat-raised-button color="primary">Login</button>
+            <button type="button" (click)="signup()" mat-raised-button color="accent">Signup</button>
+        </div>
+    </mat-card>
+
+</form>

@@ -1,0 +1,39 @@
+<form class="overlayout" fxLayout="column" fxLayoutGap="3%" fxLayoutAlign="center center" (ngSubmit)="this.loginForm.valid && signup()" [formGroup]="this.loginForm">
+
+
+    <img src="../assets/digiresume-green.png" alt="digital-resume" style="width: 20%;height: 20%;">
+
+    <mat-card fxLayout="column" fxLayoutGap="4%">
+        <h2>Signup</h2>
+        <mat-form-field>
+            <input matInput formControlName="email" placeholder="Email" type="email">
+            <mat-error>Email is not valid</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput formControlName="password" placeholder="Password" type="password">
+            <mat-error>(4-10 digit)Password is not valid</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName="confirm_password" matInput placeholder="Confirm Password" />
+            <mat-error> Confirm Password is Required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName="name" matInput placeholder="Your Name" />
+            <mat-error> Name is Required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName="experience_level" matInput placeholder="Experience Level" />
+            <mat-error> Exp Level is Required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName="job_category" matInput placeholder="Job Category" />
+            <mat-error> Job Category is Required</mat-error>
+        </mat-form-field>
+        <div fxLayoutGap="row" fxLayoutAlign="end" fxLayoutGap="5%" style="margin-top: 7%;">
+            <mat-spinner *ngIf="loading" color="primary" diameter="40"></mat-spinner>
+            <button type="button" (click)="backLogin()" mat-raised-button color="primary">Back to Login</button>
+            <button type="submit" [disabled]="isDisabled" mat-raised-button color="accent">Signup</button>
+        </div>
+    </mat-card>
+
+</form>

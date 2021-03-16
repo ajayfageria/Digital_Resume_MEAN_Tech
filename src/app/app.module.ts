@@ -13,13 +13,17 @@ import { LoginComponent } from './container/login/login.component';
 import { SignupComponent } from './container/signup/signup.component';
 import { ForgotPasswordComponent } from './container/forgot-password/forgot-password.component';
 import { AlertService } from './services/alertService';
+import { VerificationComponent } from './container/verification/verification.component';
+import { AuthGuard } from './guards/auth-guards';
+import { AnonGuards } from './guards/anon-guards';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    VerificationComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,7 @@ import { AlertService } from './services/alertService';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [HttpService,ApiService,AlertService],
+  providers: [HttpService,ApiService,AlertService,AuthGuard,AnonGuards],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

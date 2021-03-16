@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
 login(){
   this.apiService.loginandsettoken(this.loginForm.value).subscribe(data=>{
     this.alterService.success('login Successful');
+    this.router.navigate(['verify']);
   });
 }
 }

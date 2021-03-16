@@ -6,27 +6,27 @@ import { HttpService } from "./httpService";
 
 @Injectable()
 export class ApiService{
-    private readonly authToken='auth token';
+    private static authToken='auth token';
 constructor(private httpService:HttpService){
 
 }
 loginandsettoken(data:{email:string,password:string}):Observable<Users>{
    return this.httpService.get('/user/login',data).pipe(map(res=>{
-       this.setAuthToken(res.token);
+       ApiService.setAuthToken(res.token);
        return res;
    }));
 }
 
-getAuthToken(){
-    return localStorage.getItem(this.authToken)
+ static getAuthToken(){
+    return localStorage.getItem(ApiService.authToken)
 
 }
-setAuthToken(value:any){
-    localStorage.setItem(this.authToken,value);
+static setAuthToken(value:any){
+    localStorage.setItem(ApiService.authToken,value);
 
 }
-removeToken(){
-    localStorage.removeItem(this.authToken);
+static removeToken(){
+    localStorage.removeItem(ApiService.authToken);
 }
 
 signup(data:{

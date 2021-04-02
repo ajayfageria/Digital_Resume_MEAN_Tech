@@ -37,7 +37,7 @@ export class SignupComponent implements OnInit {
       this.alterService.success('signup Successful');
     this.loading=false;
     this.isDisabled=false;
-    this.router.navigate(['login'])
+    this.router.navigate([''])
     
   },(error)=>{
     this.loading=true;
@@ -47,6 +47,6 @@ export class SignupComponent implements OnInit {
 
   }
   backLogin(){
-    this.router.navigate(['login'])
+    this.router.navigate([''])
   }
 }

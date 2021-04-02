@@ -2,31 +2,20 @@ import { Injectable } from "@angular/core"
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { Users } from "../models/users";
+import { AuthUtils } from "../utility/auth-utils";
 import { HttpService } from "./httpService";
 
 @Injectable()
 export class ApiService{
-    private static authToken='auth token';
+  
 constructor(private httpService:HttpService){
 
 }
 loginandsettoken(data:{email:string,password:string}):Observable<Users>{
    return this.httpService.get('/user/login',data).pipe(map(res=>{
-       ApiService.setAuthToken(res.token);
-       return res;
+    AuthUtils.setAuthToken(res.token);
+       return res.user;
    }));
-}
-
- static getAuthToken(){
-    return localStorage.getItem(ApiService.authToken)
-
-}
-static setAuthToken(value:any){
-    localStorage.setItem(ApiService.authToken,value);
-
-}
-static removeToken(){
-    localStorage.removeItem(ApiService.authToken);
 }
 
 signup(data:{
@@ -40,6 +29,9 @@ sendPasswordResetEmail(data:{email:string}):Observable<any>{
 }
 resetPassword(data:{code:string,new_password:string,confirm_password:string}):Observable<Users>{
     return this.httpService.patch('/user/reset/password', data)
+}
+fetchMe():Observable<Users>{
+    return this.httpService.get('/user/fetch');
 }
 
 }

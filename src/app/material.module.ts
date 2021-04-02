@@ -18,7 +18,7 @@ const moduleList = [MatButtonModule,
   MatCheckboxModule,
   MatToolbarModule,
   MatInputModule,
-  MatCardModule,
+  MatIconModule,
   MatFormFieldModule,
   MatProgressSpinnerModule,
   MatSnackBarModule] 

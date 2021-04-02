@@ -1,1 +1,12 @@
-<p>verification works!</p>
+<div fxLayout="column" fxLayoutAlign="center center" class="overlay">
+    <div fxLayout="column" fxLayoutAlign="center center">
+        <mat-card fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="30px" fxFlex="100%">
+            <mat-icon inline>unsubscribe</mat-icon>
+            <div fxLayout="column" fxLayoutAlign="center center">
+                <h1>You haven't Verified your Email yet</h1>
+                <p>Please verify your email which is sent to <strong>{{email}}</strong> before continuing</p>
+            </div>
+            <button mat-raised-button color="primary">Send email again</button>
+        </mat-card>
+    </div>
+</div>

@@ -16,6 +16,13 @@ import { AlertService } from './services/alertService';
 import { VerificationComponent } from './container/verification/verification.component';
 import { AuthGuard } from './guards/auth-guards';
 import { AnonGuards } from './guards/anon-guards';
+import { OnBoardingComponent } from './container/on-boarding/on-boarding.component';
+import { DashboardComponent } from './container/dashboard/dashboard.component';
+import { Onboardingcomplete } from './guards/onboardingcomplete -guards';
+import { Onboardingincomplete } from './guards/onboardingincomplete-guards';
+import { Verificatoncompleted } from './guards/verificationcompleted-guards';
+import { Verificatonincomplete } from './guards/verificatonincomplete-guards';
+import { OnboardingIntroComponent } from './container/onboarding-intro/onboarding-intro.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +30,10 @@ import { AnonGuards } from './guards/anon-guards';
     LoginComponent,
     SignupComponent,
     ForgotPasswordComponent,
-    VerificationComponent
+    VerificationComponent,
+    OnBoardingComponent,
+    DashboardComponent,
+    OnboardingIntroComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +45,9 @@ import { AnonGuards } from './guards/anon-guards';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [HttpService,ApiService,AlertService,AuthGuard,AnonGuards],
+  providers: [HttpService,ApiService,AlertService,AuthGuard,AnonGuards,Onboardingcomplete,Onboardingincomplete,
+     Verificatoncompleted,Verificatonincomplete
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,13 @@
+<div fxLayout="column" fxLayoutAlign="start center">
+    <mat-tab-group mat-align-tabs="center" style="width: 100%;" dynamicHeight color="primary" backgroundColor="primary">
+        <mat-tab #mytab label="UPLOAD PROFILE IMAGE">
+            <app-upload-image [resume]='resume'></app-upload-image>
+        </mat-tab>
+        <mat-tab #mytab label="UPLOAD EXISTING VIDEO">
+            <app-upload-from-disk></app-upload-from-disk>
+        </mat-tab>
+        <mat-tab #mytab label="PASTE YOUTUBE LINK">
+            <app-import-youtube [resume]='resume'></app-import-youtube>
+        </mat-tab>
+    </mat-tab-group>
+</div>

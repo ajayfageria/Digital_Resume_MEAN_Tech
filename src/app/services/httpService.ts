@@ -20,6 +20,10 @@ export class HttpService{
     patch(url: string, body: any) :Observable<any>{//patch
            return this.httpClient.patch(this.baseURL+url,body,{headers:this.getAuthHeaders()});
     }
+    delete(url: string, body?: any):Observable<any>{
+           return this.httpClient.request('delete',this.baseURL+url,
+            {body, headers: this.getAuthHeaders()});
+    }
     private getAuthHeaders(){
         return {
             Authorization: `Bearer ${AuthUtils.getAuthToken()}`

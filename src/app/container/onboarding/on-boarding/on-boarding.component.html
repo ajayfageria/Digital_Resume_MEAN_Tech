@@ -1,0 +1,25 @@
+<mat-horizontal-stepper *ngIf="!this.loading">
+    <mat-step>
+        <ng-template matStepLabel>
+            Name Your Resume
+        </ng-template>
+        <app-resume-name [isCompleted]="isFirstStepCompleted"></app-resume-name>
+    </mat-step>
+    <mat-step *ngIf="isFirstStepCompleted" optional>
+        <ng-template matStepLabel>
+            Upload Video & Image
+        </ng-template>
+        <p>upload video and image</p>
+        <app-upload [resume]='resume'></app-upload>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>
+            Resume Details
+        </ng-template>
+        <app-resume-form></app-resume-form>
+    </mat-step>
+
+</mat-horizontal-stepper>
+<div *ngIf="this.loading" style="height:100vh;" fxlayout="column" fxLayoutAlign="center center">
+    <mat-spinner diameter="40"></mat-spinner>
+</div>

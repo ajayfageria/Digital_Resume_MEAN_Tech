@@ -1,0 +1,30 @@
+<div *ngIf="!loading">
+    <form *ngIf="!this.isVideoUploaded || this.uploadAgain" [formGroup]="this.youtubeForm" (ngSubmit)="this.youtubeForm.valid && this.uploadVideo()">
+        <div style="margin-top: 3%;text-align: center;" [formGroup]="this.youtubeForm" fxLayout="column" fxLayoutGap="30px" fxLayoutAlign="center stretch">
+            <h3 class="tabs-heading">
+                Import video from Youtube URL
+            </h3>
+            <mat-form-field>
+                <input matInput type="text" formControlName="video_url" placeholder="Enter youtube Video Url">
+                <mat-error>Please enter youtube video URL</mat-error>
+            </mat-form-field>
+            <div fxLayoutAlign="end">
+                <button type="submit" mat-raised-button color="primary">
+            Import
+        </button>
+            </div>
+        </div>
+    </form>
+
+    <div *ngIf="isVideoUploaded && !this.uploadAgain" style="margin-top: 3%" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="50px">
+        <p style="font-size: 1.5rem;font-weight: bolder">You have already uploaded a video</p>
+        <button (click)="this.uploadAgain = true" mat-raised-button color="primary">
+            <mat-icon>cached</mat-icon>
+    <span>Upload Again</span>
+        </button>
+    </div>
+
+</div>
+<div style="height: 100vh" fxLayout="column" fxLayoutAlign="center center">
+    <mat-spinner diameter="40" *ngIf="this.loading"></mat-spinner>
+</div>

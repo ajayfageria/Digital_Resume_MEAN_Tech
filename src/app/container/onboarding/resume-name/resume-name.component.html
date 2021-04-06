@@ -1,0 +1,21 @@
+<div class="container" fxLayoutAlign="center center">
+    <form [formGroup]="this.resumeForm" (ngSubmit)="this.resumeForm.valid && this.createResume()">
+        <mat-card *ngIf="!isCompleted && !loading" fxFlex="100%" fxLayout="column" fxLayoutGap="20px">
+            <h1 style="font-size: 2rem;">Resume name</h1>
+            <mat-form-field>
+                <input matInput formControlName="name" placeholder="Resume name" type="text">
+                <mat-hint>It can't be seen by others</mat-hint>
+                <mat-error>This field is required</mat-error>
+            </mat-form-field>
+            <div fxLayoutAlign="end end">
+                <button matStepperNext type="submit" mat-raised-button color="primary">Save</button>
+            </div>
+        </mat-card>
+        <div *ngIf="isCompleted && !loading" fxLayout="column" fxLayoutGap="30px" fxLayoutAlign="start center">
+            <img width="8%" src="../../../../assets/complete.png" alt="resumme-complete logo">
+            <p>You have already completed this step</p>
+            <button matStepperNext mat-raised-button type="button" color="primary">Next</button>
+        </div>
+    </form>
+    <mat-spinner *ngIf="loading" diameter="40"></mat-spinner>
+</div>

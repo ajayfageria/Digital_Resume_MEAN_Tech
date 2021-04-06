@@ -16,13 +16,19 @@ import { AlertService } from './services/alertService';
 import { VerificationComponent } from './container/verification/verification.component';
 import { AuthGuard } from './guards/auth-guards';
 import { AnonGuards } from './guards/anon-guards';
-import { OnBoardingComponent } from './container/on-boarding/on-boarding.component';
+import { OnBoardingComponent } from './container/onboarding/on-boarding/on-boarding.component';
 import { DashboardComponent } from './container/dashboard/dashboard.component';
 import { Onboardingcomplete } from './guards/onboardingcomplete -guards';
 import { Onboardingincomplete } from './guards/onboardingincomplete-guards';
 import { Verificatoncompleted } from './guards/verificationcompleted-guards';
 import { Verificatonincomplete } from './guards/verificatonincomplete-guards';
-import { OnboardingIntroComponent } from './container/onboarding-intro/onboarding-intro.component';
+import { OnboardingIntroComponent } from './container/onboarding/onboarding-intro/onboarding-intro.component';
+import { ResumeNameComponent } from './container/onboarding/resume-name/resume-name.component';
+import { ImportYoutubeComponent } from './container/tabs/import-youtube/import-youtube.component';
+import { UploadComponent } from './container/tabs/upload/upload.component';
+import { UploadFromDiskComponent } from './container/tabs/upload-from-disk/upload-from-disk.component';
+import { UploadImageComponent } from './container/tabs/upload-image/upload-image.component';
+import { ResumeFormComponent } from './container/resume-forms/resume-form/resume-form.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +39,13 @@ import { OnboardingIntroComponent } from './container/onboarding-intro/onboardin
     VerificationComponent,
     OnBoardingComponent,
     DashboardComponent,
-    OnboardingIntroComponent
+    OnboardingIntroComponent,
+    ResumeNameComponent,
+    UploadComponent,
+    UploadImageComponent,
+    UploadFromDiskComponent,
+    ImportYoutubeComponent,
+    ResumeFormComponent,
   ],
   imports: [
     BrowserModule,

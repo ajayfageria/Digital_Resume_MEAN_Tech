@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-onboarding-intro',
   templateUrl: './onboarding-intro.component.html',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OnboardingIntroComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {
+      
+   }
 
   ngOnInit(): void {
   }
-
+  navigate(){
+    this.router.navigate(['on-boarding','add'])
+  }
 }

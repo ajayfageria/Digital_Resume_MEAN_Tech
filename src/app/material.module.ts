@@ -9,6 +9,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 const moduleList = [MatButtonModule,
   MatMenuModule,
@@ -21,7 +24,10 @@ const moduleList = [MatButtonModule,
   MatIconModule,
   MatFormFieldModule,
   MatProgressSpinnerModule,
-  MatSnackBarModule] 
+  MatSnackBarModule,
+  MatStepperModule,
+  MatTabsModule,
+  MatExpansionModule] 
 @NgModule({
   imports: [
     moduleList

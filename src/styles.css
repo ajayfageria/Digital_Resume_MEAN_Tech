@@ -16,6 +16,45 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+.hover-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(0, 0, 0, 0);
+    height: 100%;
+    width: 100%;
+    transition: background 0.5s ease;
+}
+
+.hover {
+    opacity: 0;
+    text-align: center;
+    transition: opacity .35s ease;
+}
+
+.cards-outer-div {
+    position: relative;
+    background-color: #e5fade;
+    border: 2.5px dashed #d8d8d8;
+    width: 95%;
+    height: 100%;
+}
+
+.cards-outer-div:hover .hover-container {
+    display: block;
+    background: rgb(0, 0, 0, 0.3);
+}
+
+.cards-outer-div:hover .hover {
+    opacity: 1;
+}
+
+mat-icon {
+    font-size: 43px;
+}
+
 .tabs-heading {
     font-weight: bolder !important;
     font-size: 1.5rem !important;

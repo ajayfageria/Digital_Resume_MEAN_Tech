@@ -22,13 +22,15 @@ import { Onboardingcomplete } from './guards/onboardingcomplete -guards';
 import { Onboardingincomplete } from './guards/onboardingincomplete-guards';
 import { Verificatoncompleted } from './guards/verificationcompleted-guards';
 import { Verificatonincomplete } from './guards/verificatonincomplete-guards';
-import { OnboardingIntroComponent } from './container/onboarding/onboarding-intro/onboarding-intro.component';
-import { ResumeNameComponent } from './container/onboarding/resume-name/resume-name.component';
 import { ImportYoutubeComponent } from './container/tabs/import-youtube/import-youtube.component';
+import { OnboardingIntroComponent } from './container/onboarding/onboarding-intro/onboarding-intro.component';
+import { ResumeFormComponent } from './container/resume-forms/resume-form/resume-form.component';
+import { ResumeNameComponent } from './container/onboarding/resume-name/resume-name.component';
 import { UploadComponent } from './container/tabs/upload/upload.component';
 import { UploadFromDiskComponent } from './container/tabs/upload-from-disk/upload-from-disk.component';
 import { UploadImageComponent } from './container/tabs/upload-image/upload-image.component';
-import { ResumeFormComponent } from './container/resume-forms/resume-form/resume-form.component';
+import { ContactDetailsComponent } from './container/resume-forms/resume-card/contact-details/contact-details.component';
+import { ContactDetailFormComponent } from './container/resume-forms/resume-dialogues/contact-detail-form/contact-detail-form.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { ResumeFormComponent } from './container/resume-forms/resume-form/resume
     UploadFromDiskComponent,
     ImportYoutubeComponent,
     ResumeFormComponent,
+    ContactDetailsComponent,
+    ContactDetailFormComponent,
   ],
   imports: [
     BrowserModule,

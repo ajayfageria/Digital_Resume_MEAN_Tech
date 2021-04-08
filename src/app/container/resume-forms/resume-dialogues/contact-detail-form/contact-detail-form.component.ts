@@ -10,7 +10,7 @@ import { Resume } from 'src/app/models/resume';
 export class ContactDetailFormComponent implements OnInit {
 
   constructor(private dialogRef: MatDialogRef<ContactDetailFormComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Resume) { 
+    @Inject(MAT_DIALOG_DATA) private data: Resume) { 
       console.log(this.data);
     }
 
